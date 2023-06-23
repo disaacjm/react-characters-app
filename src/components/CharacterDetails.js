@@ -7,11 +7,9 @@ function CharacterDetails() {
 
   const [details, setDetails] = useState({});
 
-  const baseURL = "https://ih-crud-api.herokuapp.com";
-
-  useEffect(() => {
+    useEffect(() => {
     axios
-      .get(`${baseURL}/characters/${characterId}`)
+      .get(`${process.env.REACT_APP_API_URL}/characters/${characterId}`)
       .then((response) => {
         setDetails(response.data);
       })
